@@ -74,10 +74,10 @@
     <hr>
     
     <h2 class="Header">Find the apple</h2>
-    <img src="Apple.jpg" alt="Apple, There a error while loading please reload." usemap="#Map">
-    
+    <img src="Apple.jpg" alt="Apple, There is an error while loading. Please reload." usemap="#Map">
+
     <map name="Map">
-        <area target="" alt="Apple" title="Apple" href="" coords="1298,24,1292,16,1294,7,1303,10,1303,17" shape="poly">
+        <area target="" alt="Apple" title="Apple" href="#" coords="1298,24,1292,16,1294,7,1303,10,1303,17" shape="poly" onclick="checkApple()">
     </map>
     
     <script>
@@ -96,6 +96,10 @@
             message.className = "error";
         }
       });
+      
+      function checkApple() {
+            alert("Correct! You found the apple.");
+        }
    </script>
 
   </body>
