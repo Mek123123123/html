@@ -3,10 +3,100 @@
     <title>
       Puzzle
     </title>
+    <style>
+    
+      .Header {
+        text-align: center;
+      }
+      
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+      }
+      
+      .error {
+            color: red;
+      }
+      
+      .success {
+        color: green;
+      }
+      
+    </style>
   </head>
   <body>
-    <h1>Very easy puzzle!</h1>
-    <p>This is website contains puzzle!</p>
-    <p>นี่คือเว็บไซต์ที่มีปริศนา!</p>
+  
+    <div class="Header">
+      <h1>Very easy puzzle!</h1>
+      <p>This website contains puzzles!</p>
+      <p>นี่คือเว็บไซต์ที่มีปริศนา!</p>
+    </div>
+    
+    <table style="width: 100%;">
+    
+      <colgroup>
+        <col span="1" style="">
+        <col span="3" style="background-color: #000000;">
+      </colgroup>
+      
+      <tr style="background-color: #ffffff;">
+        <th></th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+      </tr>
+      
+      <tr>
+        <td>Password</td>
+        <td>H</td>
+        <td>T</td>
+        <td>M</td>
+        <td>L</td>
+        <td>:</td>
+        <td>)</td>
+      </tr>
+      
+    </table>
+    
+    <h2>Enter password</h2>
+    
+    <form id="passwordForm">
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password">
+        <button type="submit">Submit</button>
+        <p id="message"></p>
+    </form>
+    
+    <hr>
+    
+    <h2 class="Header">Find the apple</h2>
+    <img src="Apple.jpg" alt="Apple, There a error while loading please reload." usemap="#Map">
+    
+    <map name="Map">
+        <area target="" alt="Apple" title="Apple" href="" coords="1298,24,1292,16,1294,7,1303,10,1303,17" shape="poly">
+    </map>
+    
+    <script>
+      document.getElementById('passwordForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const userCode = document.getElementById('password').value;
+        const message = document.getElementById('message');
+        const secretCode = "HTML:)";
+
+        if (userCode === secretCode) {
+            message.textContent = "Password is correct!";
+            message.className = "success";
+        } else {
+            message.textContent = "Invalid password. Please try again.";
+            message.className = "error";
+        }
+      });
+   </script>
+
   </body>
 </html>
