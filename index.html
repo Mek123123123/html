@@ -82,6 +82,64 @@
     <p id="Apple"></p>
     
     <hr>
+
+    <h2 class="Header">Solve the Math Puzzle!</h2>
+    <p>What is 15 + 25?</p>
+
+    <form id="mathForm">
+      <label for="mathAnswer">Answer:</label>
+      <input type="text" id="mathAnswer" name="mathAnswer">
+      <button type="submit">Submit</button>
+      <p id="mathMessage"></p>
+    </form>
+    
+    <hr>
+
+    <h2 class="Header">Solve the Riddle!</h2>
+    <p>I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?</p>
+
+    <form id="riddleForm">
+      <label for="riddleAnswer">Answer:</label>
+      <input type="text" id="riddleAnswer" name="riddleAnswer">
+      <button type="submit">Submit</button>
+      <p id="riddleMessage"></p>
+    </form>
+    
+    <hr>
+
+    <h2 class="Header">Color Puzzle</h2>
+    <p>What color is the sky on a clear day?</p>
+
+    <form id="colorForm">
+      <label for="colorAnswer">Answer:</label>
+      <input type="text" id="colorAnswer" name="colorAnswer">
+      <button type="submit">Submit</button>
+      <p id="colorMessage"></p>
+    </form>
+    
+    <hr>
+
+    <h2 class="Header">Sequence Puzzle</h2>
+    <p>What is the next number in the sequence: 2, 4, 6, 8, ___?</p>
+
+    <form id="sequenceForm">
+      <label for="sequenceAnswer">Answer:</label>
+      <input type="text" id="sequenceAnswer" name="sequenceAnswer">
+      <button type="submit">Submit</button>
+      <p id="sequenceMessage"></p>
+    </form>
+    
+    <hr>
+
+    <h2 class="Header">Logic Puzzle</h2>
+    <p>If you have 3 apples and you take away 2, how many do you have?</p>
+
+    <form id="logicForm">
+      <label for="logicAnswer">Answer:</label>
+      <input type="text" id="logicAnswer" name="logicAnswer">
+      <button type="submit">Submit</button>
+      <p id="logicMessage"></p>
+    </form>
     
     <script>
       document.getElementById('passwordForm').addEventListener('submit', function(event) {
@@ -106,6 +164,86 @@
         message.textContent = "You found the apple!";
         message.className = "success";
       }
+      
+      document.getElementById('mathForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const answer = document.getElementById('mathAnswer').value;
+        const mathMessage = document.getElementById('mathMessage');
+        const correctAnswer = 40;
+
+        if (parseInt(answer) === correctAnswer) {
+          mathMessage.textContent = "Correct!";
+          mathMessage.className = "success";
+        } else {
+          mathMessage.textContent = "Incorrect, try again.";
+          mathMessage.className = "error";
+        }
+      });
+      
+      document.getElementById('riddleForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const riddleAnswer = document.getElementById('riddleAnswer').value.toLowerCase();
+        const riddleMessage = document.getElementById('riddleMessage');
+        const correctRiddleAnswer = "echo";
+
+        if (riddleAnswer === correctRiddleAnswer) {
+          riddleMessage.textContent = "Correct!";
+          riddleMessage.className = "success";
+        } else {
+          riddleMessage.textContent = "Incorrect, try again.";
+          riddleMessage.className = "error";
+        }
+      });
+      
+      document.getElementById('colorForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const colorAnswer = document.getElementById('colorAnswer').value.toLowerCase();
+        const colorMessage = document.getElementById('colorMessage');
+        const correctColor = "blue";
+
+        if (colorAnswer === correctColor) {
+          colorMessage.textContent = "Correct!";
+          colorMessage.className = "success";
+        } else {
+          colorMessage.textContent = "Incorrect, try again.";
+          colorMessage.className = "error";
+        }
+      });
+      
+      document.getElementById('sequenceForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const sequenceAnswer = document.getElementById('sequenceAnswer').value;
+        const sequenceMessage = document.getElementById('sequenceMessage');
+        const correctSequence = 10;
+
+        if (parseInt(sequenceAnswer) === correctSequence) {
+          sequenceMessage.textContent = "Correct!";
+          sequenceMessage.className = "success";
+        } else {
+          sequenceMessage.textContent = "Incorrect, try again.";
+          sequenceMessage.className = "error";
+        }
+      });
+      
+      document.getElementById('logicForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const logicAnswer = document.getElementById('logicAnswer').value;
+        const logicMessage = document.getElementById('logicMessage');
+        const correctLogic = 2;
+
+        if (parseInt(logicAnswer) === correctLogic) {
+          logicMessage.textContent = "Correct!";
+          logicMessage.className = "success";
+        } else {
+          logicMessage.textContent = "Incorrect, try again.";
+          logicMessage.className = "error";
+        }
+      });
    </script>
 
   </body>
