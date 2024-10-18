@@ -197,12 +197,12 @@
       
       function checkApple() {
         const message = document.getElementById('Apple');
-        const passwordStatus = document.getElementById('passwordStatus');
+        const appleStatus = document.getElementById('appleStatus');
         
         message.textContent = "You found the apple!";
         message.className = "success";
-        passwordStatus.textContent = "Correct";
-        passwordStatus.className = "success";
+        appleStatus.textContent = "Correct";
+        appleStatus.className = "success";
       }
 
       document.getElementById('mathForm').addEventListener('submit', function(event) {
